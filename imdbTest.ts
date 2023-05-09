@@ -1,7 +1,7 @@
 import {Imdb} from "./imdb";
 import { Movies } from "./movies";
 import { Profesional } from "./profesional";
-
+import * as fs from 'fs';
 
 let leo:Profesional = new Profesional("Leonardo di Caprio",48,85,183,false,"American",1,"actor")
 let tom:Profesional = new Profesional("Tom Hanks",66,80,183,false,"American",2,"actor")
@@ -44,7 +44,9 @@ let arrimdb = [mov,mov1]
 let varimdb:Imdb = new Imdb(arrimdb)
 console.log(varimdb.peliculas)
 
+let imdbobj = JSON.stringify(varimdb)  ///// variable de objeto de imdb
 
+fs.writeFileSync("imdbDDBB.json", imdbobj)
 
 
 
